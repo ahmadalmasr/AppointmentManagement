@@ -69,8 +69,7 @@ public class AppointmentsController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    // Double booking rule: cancelled appointments don't block a slot,
-    // and an appointment never conflicts with itself (excludeId).
+
     private void CheckDoubleBooking(Appointment appointment, int? excludeId)
     {
         if (appointment.Status == AppointmentStatus.Cancelled) return;
