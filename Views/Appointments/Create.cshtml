@@ -1,0 +1,9 @@
+@model Appointment
+@{ ViewData["Title"] = "New Appointment"; }
+
+<h2>New Appointment</h2>
+<form asp-action="Create" method="post" class="col-md-7">
+    <partial name="_Form" model="Model" />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-link">Cancel</a>
+</form>
