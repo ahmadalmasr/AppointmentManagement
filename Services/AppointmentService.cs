@@ -2,7 +2,7 @@ using AppointmentManagement.Models;
 
 namespace AppointmentManagement.Services;
 
-// In-memory storage using a List (data is lost when the app restarts).
+
 public class AppointmentService : IAppointmentService
 {
     private readonly List<Appointment> _appointments = new();
@@ -64,7 +64,7 @@ public class AppointmentService : IAppointmentService
         }
     }
 
-    // A slot is taken if another NON-cancelled appointment has the same date and time.
+
     public bool IsSlotTaken(DateOnly date, TimeOnly time, int? excludeId = null)
     {
         lock (_lock)
